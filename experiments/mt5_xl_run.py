@@ -11,7 +11,7 @@ Usage:
     conda run -n mo python3 mt5_xl_run.py
 """
 import os as _os, sys as _sys
-_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "src"))
 
 import config as cfg
 

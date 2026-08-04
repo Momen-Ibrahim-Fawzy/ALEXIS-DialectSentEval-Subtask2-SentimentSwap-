@@ -83,7 +83,15 @@ The EDA and subsequent experimentation drove the rest of the design:
    similarity ≥0.90 — the underlying social-media corpus has many minor-variant reposts),
    the near-duplicate's target is added as another reranking candidate.
 
-## Files
+## Layout
+
+```
+src/           core library + main entrypoints (see table below)
+experiments/   every one-off ablation/diagnostic script (18 files)
+assets/        logos used in this README
+```
+
+## Files (all under `src/`)
 
 | File | Purpose |
 |---|---|
@@ -97,26 +105,34 @@ The EDA and subsequent experimentation drove the rest of the design:
 | `predict.py` | full pipeline → `outputs/predictions.xlsx` + `outputs/predictions.zip` |
 | `log_submission.py` | snapshots each submission (predictions + config + metrics) |
 | `regenerate_reports.py` | rebuilds summary reports from logged submissions |
-| `SUBMISSIONS_LOG.md` | full experiment log: every technique tried, val/official metrics |
-| `experiments/` | `train_nllb.py`, `mt5_xl_run.py`, `mt5_xl_lora_dev.py` (alternative generator backbones evaluated in the ablations); `dpo_finetune.py`, `dpo_v6_more_epochs.py` (preference-optimization fine-tuning stage); `tune_reranking.py`, `tune_reranking_v2.py` (reranking-weight grid search); and every `*_check.py` individual ablation referenced in `SUBMISSIONS_LOG.md` / the paper's ablation table. Each imports the root-level modules above directly (e.g. `import config as cfg`) via a small `sys.path` shim at the top of the file, so run them from anywhere — no path changes needed. |
+
+`SUBMISSIONS_LOG.md` (repo root) is the full experiment log: every technique tried,
+val/official metrics. `experiments/` holds `train_nllb.py`, `mt5_xl_run.py`,
+`mt5_xl_lora_dev.py` (alternative generator backbones evaluated in the ablations);
+`dpo_finetune.py`, `dpo_v6_more_epochs.py` (preference-optimization fine-tuning stage);
+`tune_reranking.py`, `tune_reranking_v2.py` (reranking-weight grid search); and every
+`*_check.py` individual ablation referenced in `SUBMISSIONS_LOG.md` / the paper's ablation
+table. Each imports the `src/` modules above directly (e.g. `import config as cfg`) via a
+small `sys.path` shim at the top of the file, so run them from anywhere — no path changes
+needed.
 
 Model checkpoints, raw run outputs (including the retrieval index), and the released
 shared-task data are not included in this repository (see `.gitignore`) —
-`train_generator.py --mode final` and `edit_tagger.py --mode train` regenerate
-checkpoints, `retrieval_augment.py` regenerates the retrieval index, and `predict.py`
+`src/train_generator.py --mode final` and `src/edit_tagger.py --mode train` regenerate
+checkpoints, `src/retrieval_augment.py` regenerates the retrieval index, and `src/predict.py`
 writes `outputs/predictions.zip`.
 
 ## How to run
 
 ```bash
 pip install -r requirements.txt
-cd System   # this repo's root, once cloned
-python3 train_generator.py --mode dev --epochs 16  # find the true chrF-best epoch
-python3 train_generator.py --mode final --epochs N # trains + saves what predict.py uses
-python3 edit_tagger.py --mode train                 # optional: enables the tagger candidate
-python3 retrieval_augment.py                        # optional: enables near-dup retrieval candidate
-python3 predict.py                                  # -> outputs/predictions.zip
-python3 log_submission.py --tag <name> --note "..."  # snapshot before uploading
+cd ALEXIS-DialectSentEval-Subtask2-SentimentSwap-   # this repo's root, once cloned
+python3 src/train_generator.py --mode dev --epochs 16  # find the true chrF-best epoch
+python3 src/train_generator.py --mode final --epochs N # trains + saves what predict.py uses
+python3 src/edit_tagger.py --mode train                 # optional: enables the tagger candidate
+python3 src/retrieval_augment.py                        # optional: enables near-dup retrieval candidate
+python3 src/predict.py                                  # -> outputs/predictions.zip
+python3 src/log_submission.py --tag <name> --note "..."  # snapshot before uploading
 ```
 
 A CUDA GPU is strongly recommended (set `CUDA_VISIBLE_DEVICES` for your setup); see
@@ -125,7 +141,7 @@ A CUDA GPU is strongly recommended (set `CUDA_VISIBLE_DEVICES` for your setup); 
 ## Data
 
 This repository does not redistribute the DialectSentEval 2026 shared-task dataset.
-`config.py` expects the released train/val/test files under `../Data/`; obtain them from
+`src/config.py` expects the released train/val/test files under `../Data/`; obtain them from
 the official shared task page.
 
 ## Submission format
