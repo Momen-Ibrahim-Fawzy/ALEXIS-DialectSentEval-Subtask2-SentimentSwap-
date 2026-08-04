@@ -13,6 +13,9 @@ that must match the actual grading criterion.
 Usage:
   CUDA_VISIBLE_DEVICES=0 conda run -n mo python3 train_source_polarity_classifier.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import os
 
 import pandas as pd

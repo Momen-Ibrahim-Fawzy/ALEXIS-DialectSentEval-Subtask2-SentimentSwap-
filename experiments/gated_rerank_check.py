@@ -25,6 +25,9 @@ SUBMISSIONS_LOG.md v17/v19) so results are directly representative, not a proxy 
 Usage:
   CUDA_VISIBLE_DEVICES=1 conda run -n mo python3 gated_rerank_check.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import numpy as np
 import sacrebleu
 import torch

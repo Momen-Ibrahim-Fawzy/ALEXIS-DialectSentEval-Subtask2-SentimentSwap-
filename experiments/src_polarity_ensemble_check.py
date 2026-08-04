@@ -8,6 +8,9 @@ so may make different errors; averaging their confidence could push past 96.72%.
 Usage:
   CUDA_VISIBLE_DEVICES=0 conda run -n mo python3 src_polarity_ensemble_check.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import numpy as np
 import pandas as pd
 import torch

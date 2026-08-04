@@ -20,6 +20,9 @@ tradeoff line every v3-v8 reward-weight sweep explored.
 Usage:
   CUDA_VISIBLE_DEVICES=1 conda run -n mo python3 tune_reranking_v2.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import json
 import os
 

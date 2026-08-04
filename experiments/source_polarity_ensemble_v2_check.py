@@ -18,6 +18,9 @@ by any one classifier's opinion.
 Usage:
   CUDA_VISIBLE_DEVICES=0 conda run -n mo python3 source_polarity_ensemble_v2_check.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import numpy as np
 import pandas as pd
 import torch

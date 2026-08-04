@@ -8,6 +8,9 @@ epochs") is precisely what drove real wins earlier in this project's history (v6
 Usage:
   CUDA_VISIBLE_DEVICES=1 conda run -n mo python3 dpo_v6_more_epochs.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import dpo_finetune as dpo
 
 dpo.DPO_EPOCHS = 12

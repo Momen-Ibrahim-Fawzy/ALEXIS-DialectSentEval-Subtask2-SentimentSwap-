@@ -13,6 +13,9 @@ with no content-preservation pressure) unless it's genuinely far ahead.
 Usage:
   conda run -n mo python3 apply_tuned_weights.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import json
 import os
 import re

@@ -11,6 +11,9 @@ this vein is likely exhausted and effort should go elsewhere.
 Usage:
   CUDA_VISIBLE_DEVICES=0 conda run -n mo python3 v22_residual_gap_check.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import numpy as np
 import pandas as pd
 import torch

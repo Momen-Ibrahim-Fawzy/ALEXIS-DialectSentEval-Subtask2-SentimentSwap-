@@ -24,6 +24,9 @@ polarity/predictions_diagnostic.csv) -- no need to regenerate anything.
 Usage:
   CUDA_VISIBLE_DEVICES=0 conda run -n mo python3 independent_audit_check.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import sys
 
 import numpy as np

@@ -23,6 +23,9 @@ Usage:
   CUDA_VISIBLE_DEVICES=1 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True HF_TOKEN=... \
     conda run -n mo python3 mt5_xl_lora_dev.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import json
 import os
 

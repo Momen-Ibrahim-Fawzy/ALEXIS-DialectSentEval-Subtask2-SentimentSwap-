@@ -94,13 +94,11 @@ The EDA and subsequent experimentation drove the rest of the design:
 | `edit_tagger.py` | minimal-edit tagging model (`--mode {train, eval_val}`) |
 | `retrieval_augment.py` | BGE-M3 near-duplicate retrieval index (`build_index`) |
 | `train_generator.py` | `--mode {dev, final}` fine-tunes the mT5 generator |
-| `train_nllb.py`, `mt5_xl_run.py`, `mt5_xl_lora_dev.py` | alternative generator backbones evaluated in the ablations |
-| `dpo_finetune.py`, `dpo_v6_more_epochs.py` | preference-optimization fine-tuning stage |
-| `tune_reranking.py`, `tune_reranking_v2.py` | grid-searches the reranking weight blend on val |
 | `predict.py` | full pipeline → `outputs/predictions.xlsx` + `outputs/predictions.zip` |
 | `log_submission.py` | snapshots each submission (predictions + config + metrics) |
+| `regenerate_reports.py` | rebuilds summary reports from logged submissions |
 | `SUBMISSIONS_LOG.md` | full experiment log: every technique tried, val/official metrics |
-| `*_check.py` | individual ablation experiments referenced in `SUBMISSIONS_LOG.md` and in the paper's ablation table |
+| `experiments/` | `train_nllb.py`, `mt5_xl_run.py`, `mt5_xl_lora_dev.py` (alternative generator backbones evaluated in the ablations); `dpo_finetune.py`, `dpo_v6_more_epochs.py` (preference-optimization fine-tuning stage); `tune_reranking.py`, `tune_reranking_v2.py` (reranking-weight grid search); and every `*_check.py` individual ablation referenced in `SUBMISSIONS_LOG.md` / the paper's ablation table. Each imports the root-level modules above directly (e.g. `import config as cfg`) via a small `sys.path` shim at the top of the file, so run them from anywhere — no path changes needed. |
 
 Model checkpoints, raw run outputs (including the retrieval index), and the released
 shared-task data are not included in this repository (see `.gitignore`) —

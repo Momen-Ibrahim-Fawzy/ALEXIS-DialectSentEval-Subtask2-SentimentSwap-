@@ -30,6 +30,9 @@ signal on whether this helped rather than assuming it did.
 Usage:
   CUDA_VISIBLE_DEVICES=1 conda run -n mo python3 dpo_finetune.py
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 import copy
 import os
 import random
