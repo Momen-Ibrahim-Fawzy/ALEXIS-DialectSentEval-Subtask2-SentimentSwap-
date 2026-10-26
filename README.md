@@ -183,6 +183,7 @@ co-located with **EMNLP 2026**, Budapest, Hungary (October 28–29, 2026).
 
 | | |
 |---|---|
+| 📄 Paper | [ACL Anthology](https://aclanthology.org/2026.arabicnlp-sharedtasks.188/) · [PDF](https://aclanthology.org/2026.arabicnlp-sharedtasks.188.pdf) |
 | 🖼️ Poster | [PDF](presentation/ALEXIS_Poster_DialectSentEval_Subtask2_SentimentSwap.pdf) |
 | 📊 Slides | [PDF](presentation/ALEXIS_DialectSentEval_Subtask2_SentimentSwap_Presentation.pdf) · [PowerPoint](presentation/ALEXIS_DialectSentEval_Subtask2_SentimentSwap_Presentation.pptx) |
 | 🎬 Poster video | [MP4 download](https://github.com/Momen-Ibrahim-Fawzy/ALEXIS-DialectSentEval-Subtask2-SentimentSwap-/releases/download/arabicnlp2026/ALEXIS_Poster_DialectSentEval_Subtask2_SentimentSwap_final.mp4) (from the [release](https://github.com/Momen-Ibrahim-Fawzy/ALEXIS-DialectSentEval-Subtask2-SentimentSwap-/releases/tag/arabicnlp2026)) |
@@ -191,5 +192,41 @@ co-located with **EMNLP 2026**, Budapest, Hungary (October 28–29, 2026).
 
 ## Citation
 
-If you use this code, please cite our DialectSentEval 2026 system-description paper
-(citation to be added once published).
+Paper: [https://aclanthology.org/2026.arabicnlp-sharedtasks.188/](https://aclanthology.org/2026.arabicnlp-sharedtasks.188/)
+
+If you use this code, please cite our paper:
+
+```bibtex
+@inproceedings{ibrahim-etal-2026-alexis-dialectsenteval-subtask,
+    title = "{ALEXIS} at {D}ialect{S}ent{E}val Subtask 2 Retrieval-Augmented, Preference-Tuned Generation for {A}rabic Sentiment Swap",
+    author = "Ibrahim, Momen  and
+      Hassib, Mariam E.  and
+      Mahmoud Salem, Ahmed  and
+      Torki, Marwan",
+    editor = "Abdul-Mageed, Muhammad  and
+      Elsayed, Tamer  and
+      Bouamor, Houda  and
+      El-Beltagy, Samhaa  and
+      Al-Khalifa, Hend  and
+      Abdelali, Ahmed  and
+      Elmadany, AbdelRahim  and
+      El Mekki, Abdellah  and
+      Darwish, Kareem  and
+      Alkhereyf, Sakhar  and
+      Luqman, Hamzah  and
+      Khalifa, Salam  and
+      Magdy, Samar  and
+      Alyafeai, Zaid  and
+      Hamed, Injy  and
+      Zaghouani, Wajdi  and
+      Zitouni, Imed",
+    booktitle = "Proceedings of The Fourth {A}rabic Natural Language Processing Conference: Shared Tasks",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.arabicnlp-sharedtasks.188/",
+    pages = "1467--1472",
+    ISBN = "979-8-89176-497-2"
+}
+```
