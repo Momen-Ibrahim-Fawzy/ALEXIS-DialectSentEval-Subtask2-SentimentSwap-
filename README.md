@@ -174,9 +174,8 @@ preservation against the source.
 
 ## 🎤 ArabicNLP 2026 Poster & Presentation
 
-Virtual poster for **The Fourth Arabic Natural Language Processing Conference (ArabicNLP 2026)**,
-co-located with **EMNLP 2026** (Budapest, Hungary), presented in the ArabicNLP shared-task poster
-sessions on Gather on 28 and 29 October 2026.
+Poster and slides for **The Fourth Arabic Natural Language Processing Conference (ArabicNLP 2026)**,
+co-located with **EMNLP 2026**, Budapest, Hungary (October 28–29, 2026).
 
 <p align="center">
   <a href="presentation/ALEXIS_Poster_DialectSentEval_Subtask2_SentimentSwap.pdf"><img src="presentation/poster_preview.png" alt="ALEXIS poster" width="520"/></a>
